@@ -28,4 +28,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## 3/17 
 
-test
+ng github-pages failed
+
+npm install angular-cli-ghpages
+
+$ ng build --prod --base-href "https://TaiwanHolic.github.io/front-angular2/"
+$ angular-cli-ghpages
+
+is works!!

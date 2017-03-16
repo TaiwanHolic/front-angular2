@@ -1,0 +1,31 @@
+.footer {
+    background-color: #000;
+    padding: 4em;
+}
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1.5em 0;
+    .social-link {
+        margin: 0 1em;
+    }
+}
+
+.contact {
+    span {
+        color: #fff;
+    }
+    .glyphicon-envelope {
+        margin: 0 0.5em;
+    }
+    .mail-action {
+        color: #444444;
+        text-transform: uppercase;
+    }
+}
