@@ -1,0 +1,79 @@
+<div class='container'>
+    <h2 class="page-title">{{activity}} in {{area}} Taiwan</h2>
+
+    <div class="nav-area">
+        <ul class="center">
+            <li><a routerLink="/city/{{area}}/food" routerLinkActive="active">food</a></li>
+            <li><a routerLink="/city/{{area}}/fun" routerLinkActive="active">fun</a></li>
+            <li><a routerLink="/city/{{area}}/stay" routerLinkActive="active">stay</a></li>
+            <li><a routerLink="/city/{{area}}/trans" routerLinkActive="active">transport</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="activities" class="col-sm-9">
+            <div id="filter-input">
+                <p class="cube-title">Filter by</p>
+                <select name="area">
+                    <option value="">--select area--</option>
+                    <option value="Northern">Northern Taiwan</option>
+                    <option value="Mid -">Mid - Taiwan</option>
+                    <option value="Southern">Southern Taiwan</option>
+                    <option value="Eastern">Eastern Taiwan</option>
+                </select>
+                <!--<select name="category">
+                    <option value="">--select category</option>
+                    <option value="1"></option>
+                    <option value="2">Day2</option>
+                </select>-->
+                <button class="btn btn-default">Search</button>
+            </div>
+            <div class="item-list">
+                <div class="item" *ngFor="let item of itemList">
+                    <div class="thumbnail">
+                        <a routerLink="../../../detail/{{activity}}/{{item.id}}" routerLinkActive="active">
+                            <img src="assets/{{item.photo_url}}">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <h5 class="title">
+                            {{item.name}}
+                        </h5>
+                        <div class="stars">
+                            <span *ngFor="let i of arr(item.stars).fill(1)" class="glyphicon glyphicon-star"></span>
+                        </div>
+                        <div class="tags">
+                            <span class="glyphicon glyphicon-tag"></span>
+                            <span>{{item.tags}}</span>
+                        </div>
+                        <div class="tellphone">
+                            <span class="glyphicon glyphicon-earphone"></span>
+                            <span>{{item.tellphone}}</span>
+                        </div>
+                        <div class="address">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <span>{{item.address}}</span>
+                        </div>
+                        <div class="action">
+                            <div class="bookmark">
+                                <span class="glyphicon glyphicon-bookmark"></span>
+                                <span class="pointer">Add To List</span>
+                            </div>
+                            <div class="read-more">
+                                <span class="pointer">Read More</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="recommends" class="col-sm-3">
+            <p class="cube-title">Recommend for you</p>
+            <div class="recommend">
+                <a href="#">
+                    <img src="assets/images/test.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

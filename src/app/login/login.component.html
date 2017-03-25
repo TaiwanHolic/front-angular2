@@ -1,0 +1,31 @@
+<div class="cover">
+    <div class="mask">
+        <div class="container">
+            <div id="localLogin" class="col-md-8">
+                <form #loginForm>
+                    <h3 class="form-title">taiwan holic</h3>
+                    <p>Log in with your username and password</p>
+                    <div class="input-username">
+                        <input type="email" require placeholder="Email" name="email" (blur)="verifyForm()" [(ngModel)]="loginInfo.email">
+                    </div>
+                    <div class="input-password">
+                        <input type="password" require placeholder="Password" name="password" (blur)="verifyForm()" [(ngModel)]="loginInfo.password">
+                    </div>
+                    <div class="hint" *ngIf="hint.length > 0">{{hint}}</div>
+                    <div class="input-submit">
+                        <button (click)="loginLocal(loginForm)" [disabled]="!isValid" [ngClass]="{'disabled': !isValid}" type="button">Log in</button>
+                    </div>
+                    <div class="input-signup">
+                        <a class="" routerLink="signup" routerLinkActive="true">
+                            <button>Sign Up</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div id="thirdLogin" class="col-md-4">
+                <p>Or log in with Facebook?</p>
+                <button type="button" (click)="loginFacebook()">log in with facebook</button>
+            </div>
+        </div>
+
+    </div>

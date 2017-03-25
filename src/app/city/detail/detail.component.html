@@ -1,0 +1,52 @@
+<div class="cover" [ngStyle]="{'background-image': 'url(assets/' + activity.banner_url + ')'}">
+    <div class="cover-title">
+        <h2>{{activity.name}}</h2>
+    </div>
+</div>
+
+<div class="info container">
+    <div class="basic-info col-sm-9">
+        <div class="area-title">
+            basic info
+        </div>
+        <div class="info-content">
+            <div class="stars">
+                <span *ngFor="let i of arr(activity.stars).fill(1)" class="glyphicon glyphicon-star"></span>
+            </div>
+            <div class="tags">
+                <span class="glyphicon glyphicon-tag"></span>
+                <span>{{activity.tags}}</span>
+            </div>
+            <div class="calendar">
+                <span class="glyphicon glyphicon-calendar"></span>
+                <span>{{activity.day}} days</span>
+                <span>{{activity.suggest_time}}</span>
+            </div>
+            <div class="address">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <span>{{activity.city}}</span>
+                <span>{{activity.area}}&nbsp;Taiwan</span>
+            </div>
+            <div class="action">
+                <div class="bookmark">
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <span class="pointer">Add To List</span>
+                </div>
+                <div class="">
+                    <span>|</span>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span class="pointer">Comment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pictures col-sm-3">
+        <div class="area-title">
+            pictures
+        </div>
+        <div *ngFor="let picture of activity.pictures" class="picture">
+            <img [src]="'assets/'+picture">
+        </div>
+    </div>
+</div>

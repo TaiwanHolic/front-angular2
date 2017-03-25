@@ -1,3 +1,80 @@
-<p>
-  index works!
-</p>
+<div class="cover">
+    <div>
+        <a routerLink="/signup" class="signup">SIGN UP FOR FREE</a>
+    </div>
+</div>
+<!-- Itinerary -->
+<section id="itineraries">
+    <div class="container">
+        <h2 class="center section-title">Things to do</h2>
+        <div class="justify">
+            <div *ngFor="let itinerary of itineraries" class="flex-item itinerary">
+                <a routerLink="/itinerary/{{itinerary.id}}">
+                    <img src="assets/{{itinerary.photo_url}}" alt="test" />
+                    <div class="hint">{{itinerary.name}}</div>
+                </a>
+            </div>
+        </div>
+        <div class="center">
+            <a href="#" class="order">MORE THINGS TO DO</a>
+        </div>
+    </div>
+</section>
+<!-- End Itinerary -->
+
+<!-- Comment -->
+<section id="comments">
+    <div class="container">
+        <h2 class="center section-title">LOOK WHAT THEY SAID</h2>
+        <div class="justify">
+            <div *ngFor="let comment of comments" class="comment flex-item">
+                <a href="#">
+                    <img src="assets/{{comment.images[0]}}" alt="comment" />
+                </a>
+                <div class="title">{{comment.comment_title}}</div>
+                <div class="content">{{comment.comment_content}}</div>
+                <div class="footer">
+                    <img *ngIf="comment.comment_username" src="assets/images/user/user_photo/{{comment.comment_username}}.jpg" alt="{{comment.comment_username}}" />
+                    <img *ngIf="!comment.comment_username" src="assets/images/user/user_photo/manager.jpg" alt="photo" />
+                    <div> From
+                        <div class="username">{{comment.comment_username}}</div>
+                        <span class="stars">
+                            <span *ngFor="let i of arr(comment.star).fill(1)" class="glyphicon glyphicon-star"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center">
+            <a href="/city" class="explore">EXPLORE TAIWAN</a>
+        </div>
+    </div>
+</section>
+<!-- End Comment-->
+
+<!-- Community -->
+<section id="communities">
+    <div class="mask">
+        <div class="container">
+            <h2 class="center section-title">Need someone's help?</h2>
+            <h2 class="center section-sub-title">Solve any problem traveling in Taiwan.</h2>
+            <div class="justify">
+                <div *ngFor="let question of questions" class="question flex-item">
+                    <p class="title">{{question.title}}</p>
+                    <p class="content">{{question.content}}</p>
+                    <div class="footer">
+                        <img src="assets/images/user/user_photo/{{question.username}}.jpg" />
+                        <div> From </div>
+                        <div class="username">{{question.username}}</div>
+                        <div class="datetime">{{question.datetime | date: 'MMM dd'}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content center">
+                <a href="Community" class="explore">GO ASK QUESTION</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Community -->

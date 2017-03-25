@@ -1,0 +1,93 @@
+.container {
+    padding: 80px 0;
+}
+
+.nav-area {
+    padding: 10px;
+    border-top: 1px solid #000000;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 30px;
+    ul,
+    li {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        display: inline-block;
+        margin-right: 10px;
+        padding-right: 1em;
+        list-style: none;
+        a {
+            color: #000000;
+            font-size: 1.5em;
+            font-family: 'Fjalla One', sans-serif;
+            margin: 10px;
+        }
+    }
+}
+
+#city-activities {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    .city-activity {
+        flex: 1;
+        padding: 1.5em;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#foods,
+#spots,
+#stays {
+    .section-title {
+        font-size: 1.8em;
+        text-transform: uppercase;
+    }
+    .flex-justify {
+        display: flex;
+        justify-content: center;
+        .flex-item {
+            width: 33.33%;
+            margin: 0 auto;
+            .photo {
+                height: 180px;
+                text-align: center;
+                img {
+                    max-height: 100%;
+                    width: auto;
+                }
+            }
+            .name {
+                max-width: 80%;
+                font-size: 1.2em;
+                margin: 0 auto;
+                margin-top: 1em;
+            }
+            .stars {
+                text-align: center;
+                margin: 0.3em;
+            }
+            .action {
+                display: flex;
+                justify-content: center;
+                margin-top: 1em;
+                .to-list,
+                .to-read {
+                    background-color: rgba(19, 61, 134, 0.72);
+                    border-radius: 10px;
+                    font-size: 0.8em;
+                    color: #fff;
+                    border: 0px;
+                    margin: 0.3em;
+                    padding: 0.3em 1em 0.3em 0.6em;
+                    .glyphicon {
+                        margin: 0 3px;
+                    }
+                }
+            }
+        }
+    }
+}

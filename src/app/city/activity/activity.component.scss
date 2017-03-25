@@ -1,0 +1,111 @@
+.container {
+    padding: 80px 0;
+}
+
+.nav-area {
+    padding: 10px;
+    border-top: 1px solid #000000;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 30px;
+    ul,
+    li {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        display: inline-block;
+        margin-right: 10px;
+        padding-right: 1em;
+        list-style: none;
+        a {
+            color: #000000;
+            font-size: 1.5em;
+            font-family: 'Fjalla One', sans-serif;
+            margin: 10px;
+        }
+    }
+}
+
+#filter-input {
+    .cube-title {
+        text-transform: uppercase;
+        color: #000000;
+        border-top: 4px solid #133d7b;
+        padding-top: 5px;
+        padding-left: 5px;
+        border-left: 1px solid #133d7b;
+        max-width: 100px;
+    }
+    select,
+    button {
+        display: inline-block;
+    }
+    select {
+        background-color: #FFFFFF;
+        border: 1px solid #BBBBBB;
+        border-radius: 0px;
+        padding-left: 10px;
+    }
+}
+
+.item-list {
+    .item {
+        border: 1px solid #bbb;
+        padding: 10px;
+        color: #000;
+        background-color: #fff;
+        margin: 5px 0px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        div {
+            line-height: 1.5em;
+        }
+        .glyphicon {
+            margin-right: 0.5em;
+        }
+        .thumbnail {
+            margin-bottom: 0px;
+            flex: 3;
+        }
+        .info {
+            margin-left: 2em;
+            flex: 7;
+            .title {
+                font-size: 1.125em;
+                font-weight: bold;
+                margin: 1em 0px;
+            }
+            .action {
+                display: flex;
+                .pointer {
+                    cursor: pointer;
+                    color: #0f3e86;
+                    font-weight: 500;
+                }
+                .read-more {
+                    margin-left: 0.5em;
+                    border-left: 2px solid #000;
+                    padding-left: 0.5em;
+                }
+            }
+        }
+    }
+}
+
+#recommends {
+    .cube-title {
+        text-transform: uppercase;
+        color: #000000;
+        border-top: 4px solid #133d7b;
+        padding-top: 5px;
+        padding-left: 5px;
+        border-left: 1px solid #133d7b;
+        max-width: 80%;
+    }
+    img {
+        width: 100%;
+    }
+}

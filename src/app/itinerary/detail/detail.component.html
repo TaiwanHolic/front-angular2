@@ -1,0 +1,83 @@
+<div class="cover" [ngStyle]="{'background-image': 'url(assets/' + itinerary.banner_url + ')'}">
+    <div class="cover-title">
+        <h2>{{itinerary.name}}</h2>
+    </div>
+</div>
+
+<div class="info container">
+    <div class="basic-info col-sm-8">
+        <div class="area-title">
+            basic info
+        </div>
+        <div class="info-content">
+            <div class="stars">
+                <span *ngFor="let i of arr(itinerary.stars).fill(1)" class="glyphicon glyphicon-star"></span>
+            </div>
+            <div class="tags">
+                <span class="glyphicon glyphicon-tag"></span>
+                <span>{{itinerary.tags}}</span>
+            </div>
+            <div class="calendar">
+                <span class="glyphicon glyphicon-calendar"></span>
+                <span>{{itinerary.day}} days</span>
+                <span>{{itinerary.suggest_time}}</span>
+            </div>
+            <div class="address">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <span>{{itinerary.city}}</span>
+                <span>{{itinerary.area}}&nbsp;Taiwan</span>
+            </div>
+            <div class="action">
+                <div class="bookmark">
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <span class="pointer">Add To List</span>
+                </div>
+                <div class="">
+                    <span>|</span>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span class="pointer">Comment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pictures col-sm-4">
+        <div class="area-title">
+            pictures
+        </div>
+        <div *ngFor="let picture of itinerary.pictures" class="picture">
+            <img [src]="'assets/'+picture">
+        </div>
+    </div>
+</div>
+
+<div class="overview">
+    <div class="container">
+        <div class="introduce">
+            <h2>Overview</h2>
+            <p>{{itinerary.overview}}</p>
+        </div>
+
+        <div class="equipment">
+            <h2>Equipment</h2>
+            <a *ngIf="itinerary.book_url" routerLink="{{itinerary.book_url}}" class="book">book package</a>
+            <p *ngIf="!itinerary.book_url">This itenarary doesn't have a package to go alone with.</p>
+        </div>
+    </div>
+</div>
+
+<div class="download-area container">
+    <object class="pdf-view" [data]="'assets/'+itinerary.file | safe" type="application/pdf">
+        <embed [src]="'assets/'+itinerary.file | safe" type="application/pdf" />
+    </object>
+    <a href="assets/{{itinerary.file}}" target="_blank">
+        <button>Open a new Tab to Read</button>
+    </a>
+</div>
+
+<div class="comments container">
+    <div class="area-title">
+        Comments
+    </div>
+    Coming soon...
+</div>

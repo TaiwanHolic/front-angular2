@@ -1,0 +1,77 @@
+<div class='container'>
+    <h2 class="page-title">itinerary searchig</h2>
+
+    <div class="nav-area">
+        <ul class="center">
+            <li><a routerLink="/city/northern" routerLinkActive="active">Northern Taiwan</a></li>
+            <li><a routerLink="/city/mid" routerLinkActive="active">Mid Taiwan</a></li>
+            <li><a routerLink="/city/southern" routerLinkActive="active">Southern Taiwan</a></li>
+            <li><a routerLink="/city/eastern" routerLinkActive="active">Estern Taiwan</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="itineraries" class="col-sm-9">
+            <div id="filter-input">
+                <p class="cube-title">Filter by</p>
+                <select name="area">
+                    <option value="">--select area--</option>
+                    <option value="Northern">Northern Taiwan</option>
+                    <option value="Mid -">Mid - Taiwan</option>
+                    <option value="Southern">Southern Taiwan</option>
+                    <option value="Eastern">Eastern Taiwan</option>
+                </select>
+                <select name="category">
+                    <option value="">--select category</option>
+                    <option value="1">Day1</option>
+                    <option value="2">Day2</option>
+                </select>
+                <button class="btn btn-default">Search</button>
+            </div>
+            <div class="itinerary-list">
+                <div class="itinerary" *ngFor="let itinerary of itineraryList">
+                    <div class="thumbnail">
+                        <a routerLink="{{itinerary.id}}" routerLinkActive="active">
+                            <img src="assets/{{itinerary.photo_url}}">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <h5 class="title">
+                            {{itinerary.name}}
+                        </h5>
+                        <div class="tags">
+                            <span class="glyphicon glyphicon-tag"></span>
+                            <span>{{itinerary.tags}}</span>
+                        </div>
+                        <div class="calendar">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span>{{itinerary.day}} days</span>
+                            <span>{{itinerary.suggest_time}}</span>
+                        </div>
+                        <div class="address">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <span>{{itinerary.city}}</span>
+                            <span>{{itinerary.area}}&nbsp;Taiwan</span>
+                        </div>
+                        <div class="action">
+                            <div class="bookmark">
+                                <span class="glyphicon glyphicon-bookmark"></span>
+                                <span class="pointer">Add To List</span>
+                            </div>
+                            <div class="read-more">
+                                <span class="pointer">Read More</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="recommends" class="col-sm-3">
+            <p class="cube-title">Recommend for you</p>
+            <div class="recommend">
+                <a href="#">
+                    <img src="assets/images/test.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

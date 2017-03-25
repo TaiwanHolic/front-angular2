@@ -1,0 +1,124 @@
+<div class='container'>
+    <h2 class="page-title">{{area}} Taiwan</h2>
+
+    <div class="nav-area">
+        <ul class="center">
+            <li><a routerLink="/city/northern" routerLinkActive="active">Northern Taiwan</a></li>
+            <li><a routerLink="/city/mid" routerLinkActive="active">Mid Taiwan</a></li>
+            <li><a routerLink="/city/southern" routerLinkActive="active">Southern Taiwan</a></li>
+            <li><a routerLink="/city/eastern" routerLinkActive="active">Estern Taiwan</a></li>
+        </ul>
+    </div>
+
+    <div id="city-activities">
+        <div class="city-activity">
+            <a routerLink="/city/{{area}}/food">
+                <img src="assets/images/food.png">
+            </a>
+        </div>
+        <div class="city-activity">
+            <a routerLink="/city/{{area}}/fun">
+                <img src="assets/images/fun.png">
+            </a>
+        </div>
+        <div class="city-activity">
+            <a routerLink="/city/{{area}}/stay">
+                <img src="assets/images/stay.png">
+            </a>
+        </div>
+        <div class="city-activity">
+            <a routerLink="/city/{{area}}/trans">
+                <img src="assets/images/trans.png">
+            </a>
+        </div>
+    </div>
+
+
+    <section id="foods">
+        <p class="center section-title">RECOMMENDED FOODS</p>
+        <div class="flex-justify">
+            <div class="flex-item food" *ngFor="let restaurant of restaurants">
+                <div class="photo">
+                    <img src="assets/{{restaurant.photo_url}}">
+                </div>
+                <div class="name">{{restaurant.name}}</div>
+                <div class="stars">
+                    <span *ngFor="let i of arr(restaurant.stars).fill(1)" class="glyphicon glyphicon-star"></span>
+                </div>
+                <div class="tags">
+                    <span class="glyphicon glyphicon-tag"></span> {{restaurant.tags}}
+                </div>
+                <div class="phone">
+                    <span class="glyphicon glyphicon-earphone"></span> {{restaurant.tellphone}}
+                </div>
+                <div class="action">
+                    <button class="to-list">
+                        <span class="glyphicon glyphicon-bookmark"></span>Add To List
+                    </button>
+                    <a class="to-read" routerLink="#">
+                        <span class="glyphicon glyphicon-play"></span>Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="spots">
+        <p class="center section-title">RECOMMENDED FUN</p>
+        <div class="flex-justify">
+            <div class="flex-item food" *ngFor="let spot of spots">
+                <div class="photo">
+                    <img src="assets/{{spot.photo_url}}">
+                </div>
+                <div class="name">{{spot.name}}</div>
+                <div class="stars">
+                    <span *ngFor="let i of arr(spot.stars).fill(1)" class="glyphicon glyphicon-star"></span>
+                </div>
+                <div class="tags">
+                    <span class="glyphicon glyphicon-tag"></span> {{spot.tags}}
+                </div>
+                <div class="phone">
+                    <span class="glyphicon glyphicon-earphone"></span> {{spot.tellphone}}
+                </div>
+                <div class="action">
+                    <button class="to-list">
+                        <span class="glyphicon glyphicon-bookmark"></span>Add To List
+                    </button>
+                    <a class="to-read" routerLink="#">
+                        <span class="glyphicon glyphicon-play"></span>Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stays">
+        <p class="center section-title">RECOMMENDED STAY</p>
+        <div class="flex-justify">
+            <div class="flex-item food" *ngFor="let stay of stays">
+                <div class="photo">
+                    <img src="assets/{{stay.photo_url}}">
+                </div>
+                <div class="name">{{stay.name}}</div>
+                <div class="stars">
+                    <span *ngFor="let i of arr(stay.stars).fill(1)" class="glyphicon glyphicon-star"></span>
+                </div>
+                <div class="tags">
+                    <span class="glyphicon glyphicon-tag"></span> {{stay.tags}}
+                </div>
+                <div class="phone">
+                    <span class="glyphicon glyphicon-earphone"></span> {{stay.tellphone}}
+                </div>
+                <div class="action">
+                    <button class="to-list">
+                        <span class="glyphicon glyphicon-bookmark"></span>Add To List
+                    </button>
+                    <a class="to-read" routerLink="#">
+                        <span class="glyphicon glyphicon-play"></span>Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
